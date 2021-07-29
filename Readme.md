@@ -14,7 +14,7 @@ open
 - Terminal
 
 `<url>/wetty` 
- run `cd ~/workdir/homeauto`
+ run `cd ~/workdir/Terraform-deep-dive-creating-provider-for-home-automation`
 
 
 - IDE if dont want to use vim to edit files
@@ -26,8 +26,6 @@ open
 
 If using the Playgrounds infrastruture skip to step 3.
 
-1. Open Terminal
-2. `docker-compose up --detach` (--detach means we can still use the same terminal)
 3. Go to `URL:8123`
 4. Make account - not https so don't use an important password
    (location and name doesn't matter)
@@ -220,7 +218,7 @@ func resourceLightRead(ctx context.Context, d *schema.ResourceData, m interface{
 
 ```
 
-- Have a look in to the `terraform.tfstate` that was made when we did the `terraform apply` in the last step, the `status = tanted` meaning terraform doesn't trust the state
+- Have a look in to the `terraform.tfstate` that was made when we did the `terraform apply` in the last step, the `status = tainted` meaning terraform doesn't trust the state
 - Delete the `terraform.tfstate` and `terraform.tfstate.backup` files if they exsist
 - run `sh build.sh <NAME> 0.0.1` remember to change `<NAME>` to your panda name
     -and look at the `terraform.tfstate` file again, you will see the status value isnt there this time because the state can be tracked now
